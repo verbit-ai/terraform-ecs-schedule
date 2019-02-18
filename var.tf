@@ -23,3 +23,8 @@ variable "task_count" {
 variable "task_def_arn" {
   type = "string"
 }
+
+variable "command" {
+  type    = "list"
+  default = []
+}
