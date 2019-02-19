@@ -20,7 +20,7 @@ resource "aws_cloudwatch_event_target" "scheduled_task" {
   "containerOverrides": [
     {
       "name": "${var.container_name}",
-      "command": "${jsonencode(var.command)}"
+      "command": ${jsonencode(var.command)}
     }
   ]
 }
