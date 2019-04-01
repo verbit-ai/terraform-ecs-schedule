@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_event_rule" "scheduled_task" {
-  name                = "${var.container_name}_scheduled_task"
+  name                = "${var.target_id}"
   description         = "Run ecs task at a scheduled time"
   schedule_expression = "${var.schedule_expression}"
 }
