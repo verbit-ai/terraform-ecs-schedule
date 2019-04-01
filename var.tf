@@ -28,3 +28,8 @@ variable "command" {
   type    = "list"
   default = []
 }
+
+variable "schedule_list" {
+  type    = "list"
+  default = []
+}
