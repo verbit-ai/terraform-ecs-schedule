@@ -2,7 +2,7 @@ resource "aws_cloudwatch_event_rule" "scheduled_task" {
   count               = "${length(var.schedule_tasks)}"
   name                = "${var.container_name}_scheduled_task"
   description         = "Run ecs task at a scheduled time"
-  schedule_expression = "${lookup(element(var.schedule_tasks[count.index]),"cron")}"
+  schedule_expression = "${lookup(var.schedule_tasks[count.index],"cron")}"
 }
 
 resource "aws_cloudwatch_event_target" "scheduled_task" {
@@ -22,7 +22,7 @@ resource "aws_cloudwatch_event_target" "scheduled_task" {
   "containerOverrides": [
     {
       "name": "${var.container_name}",
-      "command": ${jsonencode("${lookup(element(var.schedule_tasks[count.index]),"command")}")}
+      "command": ${jsonencode("${lookup(var.schedule_tasks[count.index],"command")}")}
     }
   ]
 }
