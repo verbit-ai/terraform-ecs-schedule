@@ -29,7 +29,7 @@ variable "command" {
   default = []
 }
 
-variable "schedule_list" {
+variable "schedule_tasks" {
   type    = "list"
   default = []
 }
