@@ -8,7 +8,7 @@ resource "aws_cloudwatch_event_rule" "scheduled_task" {
 resource "aws_cloudwatch_event_target" "scheduled_task" {
   count     = "${length(var.schedule_tasks)}"
   target_id = "${var.container_name}_scheduled_task_target"
-  rule      = "${aws_cloudwatch_event_rule.scheduled_task.name}"
+  rule      = "${aws_cloudwatch_event_rule.scheduled_task[count.index].name}"
   arn       = "${var.cluster_arn}"
   role_arn  = "${var.role_arn}"
 
