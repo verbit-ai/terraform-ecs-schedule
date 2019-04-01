@@ -1,3 +1,8 @@
+variable "target_id" {
+  type    = "string"
+  default = "default-target-id"
+}
+
 variable "container_name" {
   type = "string"
 }
