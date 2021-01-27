@@ -1,12 +1,8 @@
 resource "aws_cloudwatch_event_rule" "scheduled_task" {
   name                = var.target_id
+  name_prefix         = null
   description         = "Run ecs task at a scheduled time"
   schedule_expression = var.schedule_expression
-
-  lifecycle {
-    create_before_destroy = true
-    ignore_changes        = [name_prefix]
-  }
 }
 
 resource "aws_cloudwatch_event_target" "scheduled_task" {
