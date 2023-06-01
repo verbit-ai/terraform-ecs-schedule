@@ -13,6 +13,7 @@ resource "aws_cloudwatch_event_target" "scheduled_task" {
   ecs_target {
     task_count          = "${var.task_count}"
     task_definition_arn = "${var.task_def_arn}"
+    propagate_tags      = "TASK_DEFINITION"
   }
 
   input = <<DOC
