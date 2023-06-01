@@ -1,35 +1,35 @@
 variable "target_id" {
-  type    = "string"
+  type    = string
   default = "default-target-id"
 }
 
 variable "container_name" {
-  type = "string"
+  type    = string
 }
 
 variable "schedule_expression" {
-  type    = "string"
+  type    = string
   default = "rate(1 day)"
 }
 
 variable "cluster_arn" {
-  type = "string"
+  type    = string
 }
 
 variable "role_arn" {
-  type = "string"
+  type    = string
 }
 
 variable "task_count" {
-  type    = "string"
+  type    = string
   default = "1"
 }
 
 variable "task_def_arn" {
-  type = "string"
+  type    = string
 }
 
 variable "command" {
-  type    = "list"
+  type    = list
   default = []
 }
