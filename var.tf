@@ -4,7 +4,7 @@ variable "target_id" {
 }
 
 variable "container_name" {
-  type = string
+  type    = string
 }
 
 variable "schedule_expression" {
@@ -13,11 +13,11 @@ variable "schedule_expression" {
 }
 
 variable "cluster_arn" {
-  type = string
+  type    = string
 }
 
 variable "role_arn" {
-  type = string
+  type    = string
 }
 
 variable "task_count" {
@@ -26,11 +26,10 @@ variable "task_count" {
 }
 
 variable "task_def_arn" {
-  type = string
+  type    = string
 }
 
 variable "command" {
   type    = list(string)
-  default = []
 }
 
